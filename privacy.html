@@ -1,8 +1,287 @@
-<h1>Privacy Policy</h1>
-<p>This bot does not collect personal data except basic Discord information such as user IDs, server IDs, and messages for command processing.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajveer | Digital Architect & Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2ff; /* Cyber Cyan */
+            --secondary: #7000ff; /* Neon Purple */
+            --accent: #ff0055; /* Punchy Pink */
+            --bg: #05050a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(0, 242, 255, 0.2);
+        }
 
-<p>We do not sell, share, or misuse any data.</p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-<p>All data is used only to provide bot features.</p>
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-<p>By using this bot, you agree to this policy.</p>
+        /* Background Grid Effect */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 10, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .pre-title {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .hero-name {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            line-height: 1;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-expertise {
+            font-size: clamp(1rem, 3vw, 1.8rem);
+            color: #aaa;
+            max-width: 800px;
+        }
+
+        /* Glow Button */
+        .cta-btn {
+            margin-top: 40px;
+            padding: 18px 45px;
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.4s;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 0 30px var(--primary);
+        }
+
+        /* Services Section */
+        .section { padding: 100px 10%; }
+        .section-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            border-left: 5px solid var(--secondary);
+            padding-left: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(0, 242, 255, 0.05);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Partnerships / Worked For */
+        .partner-box {
+            background: linear-gradient(90deg, #7000ff10, #00f2ff10);
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .client-list {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .client-name { color: var(--secondary); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px;
+            border-top: 1px solid var(--border);
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-name { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <nav>
+        <div class="logo">RAJVEER | DEV</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Expertise</a>
+            <a href="#work">Portfolio</a>
+            <a href="mailto:Rajveer5152singh@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <p class="pre-title">Engineering Digital Realms</p>
+        <h1 class="hero-name">HI, I AM RAJVEER</h1>
+        <p class="hero-expertise">
+            Full-Stack Discord Architect & <strong>Minecraft SMP Specialist</strong>. 
+            I build high-performance communities and automated ecosystems.
+        </p>
+        <a href="#services" class="cta-btn">Explore My Arsenal</a>
+    </header>
+
+    <section class="section" id="services">
+        <h2 class="section-title">MY EXPERTISE</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Minecraft SMPs</h3>
+                <p>Creating immersive Survival MultiPlayer experiences. Custom plugins, lag-free optimization, and economy balancing.</p>
+            </div>
+            <div class="service-card">
+                <h3>Discord Architecture</h3>
+                <p>Elite server structures with precision permissions, advanced security, and aesthetic professional layouts.</p>
+            </div>
+            <div class="service-card">
+                <h3>Bot Development</h3>
+                <p>Custom Python/Node.js solutions. Automated moderation, API integration, and bespoke user interactions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Growth Strategy</h3>
+                <p>Scaling digital communities from zero to thousands through engineered engagement and retention loops.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="work">
+        <div class="partner-box">
+            <h2 style="font-family: 'Syncopate'; margin-bottom: 20px;">TRUSTED BY GIANTS</h2>
+            <p>Proven track record of delivering excellence for top-tier creators.</p>
+            <div class="client-list">
+                <span>H4RDIKPLAYZZ</span>
+                <span class="client-name">X</span>
+                <span>CALCIUMPLAYZZ</span>
+                <span class="client-name">X</span>
+                <span>YT ECOSYSTEMS</span>
+            </div>
+            <p style="margin-top: 40px; color: var(--primary);">Collaborating with <strong>DM PRO & SKIDDAI</strong></p>
+        </div>
+    </section>
+
+    <section class="section" id="contact" style="text-align: center;">
+        <h2 class="hero-name" style="font-size: 3rem;">HAVE A PROJECT?</h2>
+        <p style="margin-bottom: 30px; color: #aaa;">Accepting high-priority requests only.</p>
+        <a href="mailto:Rajveer5152singh@gmail.com" class="cta-btn" style="background: var(--primary); color: #000;">Deploy Message</a>
+    </section>
+
+    <footer>
+        <p>RAJVEERPORTFOLIO // EST 2024 // ALL RIGHTS RESERVED</p>
+        <p style="font-size: 0.7rem; margin-top: 10px;">Rajveer5152singh@gmail.com</p>
+    </footer>
+
+</body>
+</html>
+
